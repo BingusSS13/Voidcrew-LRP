@@ -12388,13 +12388,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /mob/living/simple_animal/hostile/carp,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/structure/cable,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /turf/open/floor/iron/airless,
 /area/ruin/space/ancientstation/alpha/hall)
 "brq" = (
@@ -31550,14 +31548,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/centcom)
-"rQY" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 8
-	},
-/turf/open/floor/iron/airless,
-/area/ruin/space/ancientstation/alpha/hall)
 "rRi" = (
 /obj/item/kirbyplants{
 	icon_state = "plant-25"
@@ -49013,7 +49003,7 @@ ndI
 caJ
 caJ
 jIB
-rQY
+caJ
 tqM
 mGY
 xfE
