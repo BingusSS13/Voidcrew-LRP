@@ -280,7 +280,7 @@
 	return TRUE
 
 /obj/structure/window/proc/after_rotation(mob/user,rotation_type)
-	air_update_turf(TRUE, FALSE)
+	air_update_turf(TRUE)
 	add_fingerprint(user)
 
 /obj/structure/window/Destroy()
