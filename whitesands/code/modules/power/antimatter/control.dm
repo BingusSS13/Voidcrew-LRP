@@ -31,6 +31,7 @@
 	var/stored_core_stability_delay = 0
 
 	var/stored_power = 0//Power to deploy per tick
+	var/datum/browser/browser
 
 
 /obj/machinery/power/am_control_unit/Initialize()
@@ -275,7 +276,7 @@
 	if((get_dist(src, user) > 1) || (machine_stat & (BROKEN|NOPOWER)))
 		if(!isAI(user))
 			user.unset_machine()
-			user << browse(null, "window=AMcontrol")
+			browser?.close()
 			return
 
 	var/dat = ""
@@ -304,7 +305,9 @@
 		dat += "- <A href='?src=[REF(src)];strengthdown=1'>--</A>|<A href='?src=[REF(src)];strengthup=1'>++</A><BR><BR>"
 
 
-	user << browse(dat, "window=AMcontrol;size=420x500")
+	browser = new(user, "AMcontrol", null, 420, 500)
+	browser.set_content(dat)
+	browser.open()
 	onclose(user, "AMcontrol")
 	return
 
@@ -314,7 +317,7 @@
 		return
 
 	if(href_list["close"])
-		usr << browse(null, "window=AMcontrol")
+		browser?.close()
 		usr.unset_machine()
 		return
 
